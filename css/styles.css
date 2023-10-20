@@ -198,7 +198,7 @@ body {
 
 .webinar-main-button {
     height: 4.5rem;
-    border-radius: 2.25rem;
+    border-radius: 1.5rem;
     background: linear-gradient(180deg, #EF0909 0%, #AE0C0C 100%);
     box-shadow: 0 0.3rem 0 0 rgba(255, 0, 0, 0.25);
     font-size: 1.5rem;
@@ -240,10 +240,14 @@ body {
     left: 0;
     overflow: auto;
     z-index: 2;
-    display: grid;
+    display: none;
     place-items: center;
     padding: 20px;
     background-color: rgba(0, 0, 0, 0.50);
+}
+
+.modal-backdrop--open {
+    display: grid;
 }
 
 .modal-content {
@@ -303,6 +307,7 @@ body {
     top: 1rem;
     right: 1rem;
     width: 2rem;
+    cursor: pointer;
 }
 
 .form-button:active {

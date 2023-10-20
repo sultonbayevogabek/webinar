@@ -32,9 +32,9 @@ form.addEventListener('submit', async e => {
 
     const submitButton = e.target.querySelector('.form-button');
     const name = e.target.querySelector('#name').value.trim();
-    const phone = e.target.querySelector('#phone').value;
+    const phone = e.target.querySelector('#phone').value?.replace(/[^0-9]/g, '');
 
-    if (name.length && phone?.replace(/[^0-9]/g, '')?.length === 12) {
+    if (name.length && phone?.length === 12) {
         submitButton.setAttribute('disabled', true);
         submitButton.textContent = 'Yuborilmoqda...'
 

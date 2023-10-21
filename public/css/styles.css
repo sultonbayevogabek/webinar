@@ -405,7 +405,7 @@ body {
     }
 
     .webinar-main--telegram {
-        flex-grow: 1;
+        text-align: center;
     }
 
     .webinar-main-content {

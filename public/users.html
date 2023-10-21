@@ -9,7 +9,6 @@
 
     <style>
         table {
-            margin-top: 10px;
             width: 100%;
             border: 1px solid lightgrey;
             border-collapse: collapse;
@@ -20,15 +19,19 @@
             border: 1px solid lightgrey;
             padding: 5px;
         }
+
+        th {
+            padding: 10px;
+        }
     </style>
 </head>
-<body>
+<body style="margin: 0">
 
-<button id="refresh">Ro'yxatni yangilash <strong>0</strong></button>
+
 <table>
-    <thead>
+    <thead style="position:sticky; top: 0; z-index: 2; background-color: lightcyan">
     <tr>
-        <th>N</th>
+        <th><button id="refresh">Ro'yxatni yangilash <strong>0</strong></button></th>
         <th>Ismi</th>
         <th>Telefon raqami</th>
         <th>Ro'yxatdan o'tgan vaqti</th>

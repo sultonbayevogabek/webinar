@@ -77,12 +77,23 @@ try {
                 <tr>
                     <td>${ count }</td>
                     <td>${ users[key].name }</td>
-                    <td>${ users[key].phone }</td>
+                    <td style="display: flex; justify-content: space-between">
+                        <span>${ users[key].phone }</span>
+                        <button style="cursor: pointer; margin-left: auto" data-clipboard>Copy</button>
+                    </td>
                     <td>${ users[key].time }</td>
                 </tr>
             `
         }
         usersCount.textContent = count;
+
+        document.querySelectorAll('[data-clipboard]').forEach(i => {
+            i.addEventListener('click', e => {
+                const phone = e.target.parentElement.children[0].textContent;
+
+                navigator.clipboard.writeText(phone);
+            })
+        })
     }
 
     getUsersList();

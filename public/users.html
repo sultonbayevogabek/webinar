@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Webinar - Komiljon Xamidjonov</title>
+
+    <style>
+        table {
+            margin-top: 10px;
+            width: 100%;
+            border: 1px solid lightgrey;
+            border-collapse: collapse;
+            font-family: sans-serif;
+        }
+
+        th, td {
+            border: 1px solid lightgrey;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<button id="refresh">Ro'yxatni yangilash <strong>0</strong></button>
+<table>
+    <thead>
+    <tr>
+        <th>N</th>
+        <th>Ismi</th>
+        <th>Telefon raqami</th>
+        <th>Ro'yxatdan o'tgan vaqti</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBGtejrLNxacNZAXgcCHD4so0m3K3nmEzI",
+        authDomain: "webinar-backend-750b6.firebaseapp.com",
+        databaseURL: "https://webinar-backend-750b6-default-rtdb.firebaseio.com",
+        projectId: "webinar-backend-750b6",
+        storageBucket: "webinar-backend-750b6.appspot.com",
+        messagingSenderId: "389007731082",
+        appId: "1:389007731082:web:22dcc91f1f24aba81b0073",
+        measurementId: "G-RHG53DPJ2C"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+<script defer src="js/script.js"></script>
+</body>
+</html>

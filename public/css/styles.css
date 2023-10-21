@@ -220,6 +220,28 @@ body {
     font-weight: 500;
     color: #FFFFFF;
     text-decoration: none;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    animation-delay: 0s;
+    -webkit-animation-duration: 2s;
+    -moz-animation-duration: 2s;
+    animation-duration: 2s;
+    -webkit-animation-iteration-count: infinite;
+    -moz-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    animation-name: shake-it;
+}
+
+@keyframes shake-it {
+    from, to {
+        transform: translateX(0px);
+    }
+    10%, 30%, 50%, 70%, 90% {
+        transform: translateX(10px);
+    }
+    20%, 40%, 60%, 80% {
+        transform: translateX(-10px);
+    }
 }
 
 .webinar-telegram-button img {
@@ -300,6 +322,11 @@ body {
     color: #FFFFFF;
     font-weight: 500;
     transition: all 0.1s ease;
+}
+
+.form-button[disabled] {
+    background: lightgrey;
+    cursor: not-allowed;
 }
 
 .form-close {

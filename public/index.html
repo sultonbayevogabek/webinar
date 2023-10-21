@@ -8,8 +8,6 @@
     <title>Webinar - Komiljon Xamidjonov</title>
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script defer src="js/script.js"></script>
-    <script defer src="js/mask.js"></script>
 </head>
 <body>
 
@@ -80,7 +78,7 @@
 
     <div class="webinar-main-mentor">
         <div class="container">
-            <img srcset="img/mentor@2x.png 2x" src="img/mentor@1x.png" alt="">
+            <img src="img/mentor@1x.png" loading="lazy">
         </div>
     </div>
 </div>
@@ -106,5 +104,27 @@
         <img data-modal-close class="form-close" src="img/x.svg" alt="close icon">
     </form>
 </div>
+
+<script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-analytics.js";
+
+    const firebaseConfig = {
+        apiKey: "AIzaSyBGtejrLNxacNZAXgcCHD4so0m3K3nmEzI",
+        authDomain: "webinar-backend-750b6.firebaseapp.com",
+        databaseURL: "https://webinar-backend-750b6-default-rtdb.firebaseio.com",
+        projectId: "webinar-backend-750b6",
+        storageBucket: "webinar-backend-750b6.appspot.com",
+        messagingSenderId: "389007731082",
+        appId: "1:389007731082:web:22dcc91f1f24aba81b0073",
+        measurementId: "G-RHG53DPJ2C"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+</script>
+<script defer src="js/script.js"></script>
+<script defer src="js/mask.js"></script>
 </body>
 </html>

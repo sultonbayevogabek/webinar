@@ -53,13 +53,6 @@ try {
                 })
             })
 
-            let responseClone = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users-backup.json', {
-                method: 'POST',
-                body: JSON.stringify({
-                    name, phone, time: new Date().toLocaleString()
-                })
-            })
-
             if (response.ok) {
                 window.location.href = `${ window.location.protocol }//${ window.location.host }/telegram.html`
             }

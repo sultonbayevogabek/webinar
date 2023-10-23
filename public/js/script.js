@@ -74,6 +74,7 @@ try {
     const usersCount = document.querySelector('#refresh strong');
     const pagination = document.querySelector('#pagination');
     let page = 1;
+    let users = [];
 
     async function getUsersList() {
         let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
@@ -81,7 +82,7 @@ try {
         })
 
         const usersObjects = await response.json()
-        const users = [];
+        users = [];
         let count = 0;
         for (const key in usersObjects) {
             count++;
@@ -91,6 +92,7 @@ try {
             })
         }
         usersCount.textContent = count;
+        drawList();
 
         pagination.innerHTML = '';
         for (let i = 0; i < Math.ceil(count / 100); i++) {
@@ -102,10 +104,13 @@ try {
         document.querySelectorAll('[data-paginator-button]')?.forEach(button => {
             button.addEventListener('click', e => {
                 page = +e.target.textContent;
-                getUsersList();
+
+                drawList();
             })
         })
+    }
 
+    function drawList() {
         tbody.innerHTML = '';
         users.slice((page - 1) * 100, page * 100)?.forEach(user => {
             tbody.innerHTML += `
@@ -122,7 +127,6 @@ try {
                 </tr>
             `
         })
-
         document.querySelectorAll('[data-clipboard]').forEach(i => {
             i.addEventListener('click', e => {
                 const phone = e.target.parentElement.children[0].textContent;

@@ -8,15 +8,13 @@ if (user && user?.name && user?.phone && user?.time) {
     formData.append('Telefon raqami', user?.phone);
     formData.append(`Ro'yxatdan o'tgan vaqti`, user?.time);
 
-    fetch('https://script.google.com/macros/s/AKfycbz8tbyAdWWn7YHICJhrn_WQmUPXtUXQW8dPqOq3GtU/dev', {
+    fetch('https://script.google.com/macros/s/AKfycbyirLuhsgD4t4Uc6tk0F995Rdta7XAmP3uM4kwrM3p-jc7Vo4oZOLjHT8p4JE9bMAxQ/exec', {
         method: 'POST',
         body: formData
     })
         .then(res => res.json())
         .then(res => {
-            if (res.ok) {
-                localStorage.clear();
-            }
+            localStorage.clear();
         })
 } else {
     localStorage.clear();

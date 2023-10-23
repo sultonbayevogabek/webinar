@@ -1,5 +1,15 @@
 'use strict';
 
+// (async () => {
+//     let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
+//         method: 'DELETE',
+//         body: JSON.stringify({
+//             id: '-NhOvlEtNmgeoFCdMhkA'
+//         })
+//     });
+//     console.log(await response.json());
+// })()
+
 
 // Index page
 try {
@@ -46,7 +56,7 @@ try {
             formData.append('Telefon raqami', phone);
             formData.append(`Ro'yxatdan o'tgan vaqti`, new Date().toLocaleString());
 
-            let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
+            let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users-backup.json', {
                 method: 'POST',
                 body: JSON.stringify({
                     name, phone, time: new Date().toLocaleString()
@@ -72,7 +82,7 @@ try {
     let users = [];
 
     async function getUsersList() {
-        let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
+        let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users-backup.json', {
             method: 'GET'
         })
 

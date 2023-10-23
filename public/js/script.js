@@ -1,15 +1,5 @@
 'use strict';
 
-// (async () => {
-//     let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
-//         method: 'DELETE',
-//         body: JSON.stringify({
-//             id: '-NhOvlEtNmgeoFCdMhkA'
-//         })
-//     });
-//     console.log(await response.json());
-// })()
-
 
 // Index page
 try {
@@ -51,10 +41,11 @@ try {
             submitButton.setAttribute('disabled', true);
             submitButton.textContent = 'Yuborilmoqda...'
 
-            const formData = new FormData();
-            formData.append('Ismi', name);
-            formData.append('Telefon raqami', phone);
-            formData.append(`Ro'yxatdan o'tgan vaqti`, new Date().toLocaleString());
+            localStorage.setItem('user', JSON.stringify({
+                name,
+                phone,
+                time: new Date().toLocaleString()
+            }))
 
             let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users-backup.json', {
                 method: 'POST',

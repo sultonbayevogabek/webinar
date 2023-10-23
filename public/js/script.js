@@ -46,12 +46,14 @@ try {
             formData.append('Telefon raqami', phone);
             formData.append(`Ro'yxatdan o'tgan vaqti`, new Date().toLocaleString());
 
-            // await fetch('https://script.google.com/macros/s/AKfycbyirLuhsgD4t4Uc6tk0F995Rdta7XAmP3uM4kwrM3p-jc7Vo4oZOLjHT8p4JE9bMAxQ/exec', {
-            //     method: 'POST',
-            //     body: formData
-            // })
-
             let response = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users.json', {
+                method: 'POST',
+                body: JSON.stringify({
+                    name, phone, time: new Date().toLocaleString()
+                })
+            })
+
+            let responseClone = await fetch('https://webinar-backend-750b6-default-rtdb.firebaseio.com/users-backup.json', {
                 method: 'POST',
                 body: JSON.stringify({
                     name, phone, time: new Date().toLocaleString()
